@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
         webSettings.setJavaScriptEnabled(true);
         webView.loadUrl("http://www.energysistem.com/thader/registro?TF=1");
 
+
     }
     private void KillStatusBar()
     {
