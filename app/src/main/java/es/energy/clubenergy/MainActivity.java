@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
         // Enable JavaScript
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("http://energysistem/thader/registro");
+        webView.loadUrl("http://www.energysistem.com/thader/registro?TF=1");
 
 
     }
