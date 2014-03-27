@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.Toast;
+
 import java.io.IOException;
 
 
@@ -15,12 +17,15 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        KillStatusBar();
+
         WebView webView =(WebView)this.findViewById(R.id.webView);
         // Enable JavaScript
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-        webView.loadUrl("http://www.energysistem.com/thader/registro?TF=1");
+        //webView.loadUrl("http://www.energysistem.com/thader/registro?TF=1");
+        webView.loadUrl("http://www.energysistem.com/altatablet?PR=BICO");
+        //webView.loadUrl("http://www.energysistem.com/guide?CODE=39930");
+        KillStatusBar();
 
 
     }
@@ -37,7 +42,7 @@ public class MainActivity extends Activity {
         try {
             proc = Runtime.getRuntime().exec(new String[]{"su", "-c", "service call activity " + ProcID + " s16 com.android.systemui"});
         } catch (IOException e) {
-            Log.d("TAG", "Failed to kill task bar (1).");
+            Log.d("TAG","Failed to kill task bar (1).");
             e.printStackTrace();
         }
         try {
@@ -47,6 +52,10 @@ public class MainActivity extends Activity {
             e.printStackTrace();
         }
     }
+
+
+
+
 
 
 }
